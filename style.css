@@ -43,15 +43,15 @@ body {
     font-weight: 600;
 }
 
-.header .login-btn {
+.btns:hover {
+    filter: brightness(80%);
+}
+
+.btns {
     background-color: var(--grey);
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius);
     border: none;
     cursor: pointer;
     font-size: 1.1rem;
-}
-
-.header .login-btn:hover {
-    filter: brightness(80%);
 }
