@@ -55,3 +55,14 @@ body {
     cursor: pointer;
     font-size: 1.1rem;
 }
+
+.main-content {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    padding: 30px;
+}
+
+.add-book-btn {
+    font-size: 1.3rem;
+}
