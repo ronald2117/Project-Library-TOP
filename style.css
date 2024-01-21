@@ -11,6 +11,7 @@
     --spacing-md: 15px;
     --spacing-lg: 20px;
     --spacing-xl: 40px;
+    --cards-width: 300px;
     --container-width: 1200px;
     --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -65,4 +66,14 @@ body {
 
 .add-book-btn {
     font-size: 1.3rem;
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+}
+
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--cards-width)));
 }
