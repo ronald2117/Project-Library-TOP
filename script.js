@@ -21,29 +21,36 @@ function Book(title, author, page, ifRead) {
 function displayBooks(books) {
     booksContainer.innerHTML = '';
     for (let book of books) {
+        const bookCard = document.createElement('div');
+        bookCard.classList.add('book-card');
+
         const cardBookTitle = document.createElement('p');
         cardBookTitle.textContent = book.title
-        booksContainer.appendChild(cardBookTitle);
+        bookCard.appendChild(cardBookTitle);
 
         const cardBookAuthor = document.createElement('p');
         cardBookAuthor.textContent = book.author;
-        booksContainer.appendChild(cardBookAuthor);
+        bookCard.appendChild(cardBookAuthor);
 
         const cardBookPage = document.createElement('p');
         cardBookPage.textContent = 'Pages: ' + book.page;
-        booksContainer.appendChild(cardBookPage);
+        bookCard.appendChild(cardBookPage);
 
         const ifReadButton = document.createElement('button');
+        ifReadButton.classList.add('if-read-button');
         if (book.ifRead == true) {
             ifReadButton.textContent = 'Read';
         } else {
             ifReadButton.textContent = 'Not read yet'
         }
-        booksContainer.appendChild(ifReadButton);
+        bookCard.appendChild(ifReadButton);
 
         const deleteCardBtn = document.createElement('button');
+        deleteCardBtn.classList.add('delete-card-button');
         deleteCardBtn.textContent = 'Delete';
-        booksContainer.appendChild(deleteCardBtn);
+        bookCard.appendChild(deleteCardBtn);
+
+        booksContainer.appendChild(bookCard);
     }
 }
 
