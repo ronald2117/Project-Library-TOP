@@ -93,4 +93,5 @@ dialog form {
     align-items: center;
     border-radius: 10px;
     line-height: 50%;
+    border: 1px solid black;
 }
