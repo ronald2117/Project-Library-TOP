@@ -78,8 +78,3 @@ submitDialogBtn.addEventListener('click', () => {
     
     displayBooks(library);
 })
-
-
-
-
-
