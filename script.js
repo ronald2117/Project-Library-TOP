@@ -25,7 +25,7 @@ function displayBooks(books) {
         bookCard.classList.add('book-card');
 
         const cardBookTitle = document.createElement('p');
-        cardBookTitle.textContent = book.title
+        cardBookTitle.textContent = `"${book.title}"`;
         bookCard.appendChild(cardBookTitle);
 
         const cardBookAuthor = document.createElement('p');
