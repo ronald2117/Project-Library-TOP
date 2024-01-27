@@ -42,9 +42,20 @@ function displayBooks(books) {
         if (book.ifRead == true) {
             ifReadButton.textContent = 'Read';
         } else {
-            ifReadButton.textContent = 'Not read yet'
+            ifReadButton.textContent = 'Not read yet';
         }
         bookCard.appendChild(ifReadButton);
+        ifReadButton.addEventListener('click', () => {
+            if(book.ifRead == true) {
+                ifReadButton.textContent = 'Not read yet';
+                book.ifRead = false;
+                console.log(book.ifRead);
+            } else {
+                ifReadButton.textContent = 'Read';
+                book.ifRead = true;
+                console.log(book.ifRead);
+            }
+        })
 
         const deleteCardBtn = document.createElement('button');
         deleteCardBtn.classList.add('delete-card-button');
@@ -52,9 +63,7 @@ function displayBooks(books) {
         bookCard.appendChild(deleteCardBtn);
         deleteCardBtn.addEventListener('click', () => {
             bookCard.remove();
-            console.log(library);
             library = library.filter(item => item.id !== book.id);
-            console.log(library);
         }) 
 
         booksContainer.appendChild(bookCard);
