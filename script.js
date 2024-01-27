@@ -40,18 +40,18 @@ function displayBooks(books) {
         const ifReadButton = document.createElement('button');
         ifReadButton.classList.add('if-read-button');
         if (book.ifRead == true) {
-            ifReadButton.textContent = 'Read';
+            ifReadButton.textContent = 'Finished';
         } else {
-            ifReadButton.textContent = 'Not read yet';
+            ifReadButton.textContent = 'Not finished';
         }
         bookCard.appendChild(ifReadButton);
         ifReadButton.addEventListener('click', () => {
             if(book.ifRead == true) {
-                ifReadButton.textContent = 'Not read yet';
+                ifReadButton.textContent = 'Not finished';
                 book.ifRead = false;
                 console.log(book.ifRead);
             } else {
-                ifReadButton.textContent = 'Read';
+                ifReadButton.textContent = 'Finished';
                 book.ifRead = true;
                 console.log(book.ifRead);
             }
