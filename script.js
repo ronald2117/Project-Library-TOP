@@ -11,7 +11,8 @@ const ifRead = document.querySelector('#book-if-read');
 
 let library = [];
 
-function Book(title, author, page, ifRead) {
+function Book(id, title, author, page, ifRead) {
+    this.id = id;
     this.title = title;
     this.author = author;
     this.page = page;
@@ -49,6 +50,12 @@ function displayBooks(books) {
         deleteCardBtn.classList.add('delete-card-button');
         deleteCardBtn.textContent = 'Delete';
         bookCard.appendChild(deleteCardBtn);
+        deleteCardBtn.addEventListener('click', () => {
+            bookCard.remove();
+            console.log(library);
+            library = library.filter(item => item.id !== book.id);
+            console.log(library);
+        }) 
 
         booksContainer.appendChild(bookCard);
     }
@@ -72,7 +79,7 @@ submitDialogBtn.addEventListener('click', () => {
         alert("Please fill out all fields");
         return;
     }
-    const newBook = new Book(bookTitle.value, bookAuthor.value, bookPage.value, ifRead.checked);
+    const newBook = new Book(Math.random(), bookTitle.value, bookAuthor.value, bookPage.value, ifRead.checked);
     library.push(newBook);
     dialog.close()
     
