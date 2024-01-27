@@ -81,7 +81,16 @@ cancelDialogBtn.addEventListener('click', () => {
 })
 
 submitDialogBtn.addEventListener('click', () => {
+    addBook();
+})
 
+dialog.addEventListener('keydown', (e) => {
+    if (e.key == "Enter") {
+        addBook();
+    }
+})
+
+function addBook() {
     if (bookTitle.value == '' || bookAuthor.value == '' || bookPage.value == '') {
         alert("Please fill out all fields");
         return;
@@ -91,4 +100,4 @@ submitDialogBtn.addEventListener('click', () => {
     dialog.close()
     
     displayBooks(library);
-})
+}
