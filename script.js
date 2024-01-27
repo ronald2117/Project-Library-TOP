@@ -49,11 +49,9 @@ function displayBooks(books) {
             if(book.ifRead == true) {
                 ifReadButton.textContent = 'Not finished';
                 book.ifRead = false;
-                console.log(book.ifRead);
             } else {
                 ifReadButton.textContent = 'Finished';
                 book.ifRead = true;
-                console.log(book.ifRead);
             }
         })
 
